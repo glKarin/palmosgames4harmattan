@@ -1,0 +1,18 @@
+This software uses many packages from third parties:
+- libsdl-mixer 1.2.8 from http://www.libsdl.org/projects/SDL_mixer/ and related
+  patches from Palm ( http://opensource.palm.com/ ).
+  License: LGPL 2.1.
+  You can find a copy of the license in the shipped libsdl-mixer tarball.
+- libpng 1.2.44 from http://www.libpng.org/pub/png/libpng.html .
+  License: libpng license.
+  You can find a copy of this license in the shipped libpng tarball.
+
+And from myself:
+- libsdlpre from <maemo@javispedro.com>
+  License: LGPL 2.1
+  You can find a copy of this license in src/libsdlpre/COPYING
+- libstub
+  No copyright
+
+Due to this, the resulting binary falls under the LGPL 2.1 .
+

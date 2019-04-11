@@ -1,0 +1,58 @@
+diff -rup orig/configure libsdl-mixer-1.2/configure
+--- orig/configure	2010-10-21 01:48:11.000000000 +0200
++++ libsdl-mixer-1.2/configure	2010-10-21 01:52:14.000000000 +0200
+@@ -11683,11 +11683,6 @@ CPPFLAGS="$CPPFLAGS $EXTRA_CFLAGS"
+ CFLAGS="$CFLAGS $EXTRA_CFLAGS"
+ LDFLAGS="$LDFLAGS $EXTRA_LDFLAGS"
+ 
+-
+-# PALM; always build with ffmpeg for now; this should be better integrated
+-EXTRA_CFLAGS="$EXTRA_CFLAGS -DPLUGIN_MUSIC"
+-EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lavformat -lavcodec -lavutil -Xlinker $LDFLAGS"
+-
+ { $as_echo "$as_me:$LINENO: checking for an ANSI C-conforming const" >&5
+ $as_echo_n "checking for an ANSI C-conforming const... " >&6; }
+ if test "${ac_cv_c_const+set}" = set; then
+@@ -13136,7 +13131,7 @@ fi
+                 echo "-- dynamic libvorbisidec -> $ogg_lib"
+                 EXTRA_CFLAGS="$EXTRA_CFLAGS -DOGG_DYNAMIC=\\\"$ogg_lib\\\""
+             else
+-                EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lvorbisidec -lvorbis -logg $LIBM"
++                EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lvorbisidec $LIBM"
+             fi
+         else
+             { $as_echo "$as_me:$LINENO: WARNING: *** Unable to find Ogg Vorbis Tremor library (http://www.xiph.org/)" >&5
+@@ -15235,7 +15230,8 @@ $debug ||
+ if test -n "$CONFIG_FILES"; then
+ 
+ 
+-ac_cr=''
++ac_cr='
++'
+ ac_cs_awk_cr=`$AWK 'BEGIN { print "a\rb" }' </dev/null 2>/dev/null`
+ if test "$ac_cs_awk_cr" = "a${ac_cr}b"; then
+   ac_cs_awk_cr='\\r'
+diff -rup orig/configure.in libsdl-mixer-1.2/configure.in
+--- orig/configure.in	2010-10-21 01:48:11.000000000 +0200
++++ libsdl-mixer-1.2/configure.in	2010-10-21 01:51:53.000000000 +0200
+@@ -76,11 +76,6 @@ CPPFLAGS="$CPPFLAGS $EXTRA_CFLAGS"
+ CFLAGS="$CFLAGS $EXTRA_CFLAGS"
+ LDFLAGS="$LDFLAGS $EXTRA_LDFLAGS"
+ 
+-
+-# PALM; always build with ffmpeg for now; this should be better integrated
+-EXTRA_CFLAGS="$EXTRA_CFLAGS -DPLUGIN_MUSIC"
+-EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lavformat -lavcodec -lavutil -Xlinker $LDFLAGS"
+-
+ dnl Check for compiler characteristics
+ AC_C_CONST
+ 
+@@ -361,7 +356,7 @@ if test x$enable_music_ogg = xyes; then
+                 echo "-- dynamic libvorbisidec -> $ogg_lib"
+                 EXTRA_CFLAGS="$EXTRA_CFLAGS -DOGG_DYNAMIC=\\\"$ogg_lib\\\""
+             else
+-                EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lvorbisidec -lvorbis -logg $LIBM"
++                EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lvorbisidec $LIBM"
+             fi
+         else
+             AC_MSG_WARN([*** Unable to find Ogg Vorbis Tremor library (http://www.xiph.org/)])

@@ -1,0 +1,18 @@
+Welcome =========================================
+
+This is preenv, a set of stub libraries and patches to third party libraries
+that should make running WebOS native plugins (mostly games) on the N900 easier.
+
+Running =========================================
+
+Unpack the binaries tarball somewhere (requires a filesystem with POSIX
+semantics).
+
+cd into the directory that contains env.sh.
+
+On your sh-like shell, run:
+$ . ./env.sh
+
+Now, change into the directory where your Pre binary is stored and try to run
+it.
+

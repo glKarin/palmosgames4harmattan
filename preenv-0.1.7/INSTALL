@@ -1,0 +1,41 @@
+Prerequisites ===================================
+
+- WWW connection (Makefiles fetch some 3rd party sources from the www)
+- SDL and development headers
+- of course, any requisite not covered by this project and required by the
+  application you're trying to run, like:
+  - GLES or GLES2 libraries
+  - SDL_image
+  - etc.
+- glib
+- glib-json
+
+libsdl-mixer prerequisites:
+- libivorbisdec and development headers
+- libsmpeg and development headers
+
+libpng prerequisites:
+
+
+Build ===========================================
+
+$ make all
+
+Install =========================================
+
+$ make install DESTDIR="$PWD/target"
+
+This will create $PWD/target. Note that the folder layout is subject to change.
+
+!!!!!!!!!!
+DO NOT SET DESTDIR TO "/" NOR "/usr", it WILL overwrite system libraries.
+Use a private directory for now!
+For example, "/usr/lib/preenv" or "/opt/preenv"
+!!!!!!!!!!
+
+DESTDIR must be an absolute path.
+
+Running =========================================
+
+See README
+
